@@ -251,7 +251,7 @@ function tre() {
 # Based on https://github.com/stephenplusplus/dots/blob/master/.bash_profile#L68 by @stephenplusplus
 #
 # Note: subl is already setup as a shortcut to Sublime. Replace with your own editor if different
-# 
+#
 # - arg 1 - url|username|repo remote endpoint, username on github, or name of
 #           repository.
 # - arg 2 - (optional) name of repo
@@ -272,7 +272,7 @@ function tre() {
 #     .. cd dots
 #     .. subl .
 function clone {
-  # customize username to your own 
+  # customize username to your own
   local username="jwv"
 
   local url=$1;
@@ -291,7 +291,8 @@ function clone {
     # not my own, but I know whose it is.
     url="git@github.com:$url/$repo.git";
   fi
-
+  echo "Repo: " $url $repo
+  echo
   git clone $url $repo && cd $repo && subl .;
 }
 
@@ -301,21 +302,21 @@ function headers {
 }
 
 # find shorthand
-function f { 
-	find . -name "$1" 
+function f {
+	find . -name "$1"
 }
 
 # Find file whose name starts with a given string
-function fs { 
+function fs {
 	find . -name "$1"'*'
 }
 
 # Find file whose name ends with a given string
-function fe { 
+function fe {
 	find . -name '*'"$1"
 }
 
-#display useful host related informaton
+# display useful host related informaton
 function i {
 	echo -e "\nYou are logged on ${RED}$HOST"
 	echo -e "\nAdditionnal information:$NC " ; uname -a
@@ -323,11 +324,18 @@ function i {
 	echo -e "\n${RED}Current date :$NC " ; date
 	echo -e "\n${RED}Machine stats :$NC " ; uptime
 	echo -e "\n${RED}Current network location :$NC " ; scselect
-	echo -e "\n${RED}Public facing IP Address :$NC " ;myip
+	echo -e "\n${RED}Public facing IP Address :$NC " ;ip
 	#echo -e "\n${RED}DNS Configuration:$NC " ; scutil --dns
 	echo
 }
 
+# User Proccess
 function myps {
- ps -u $USER -o pid,%cpu,%mem,start,time,bsdtime,command ; 
+ ps -u $USER -o pid,%cpu,%mem,start,time,bsdtime,command ;
+}
+
+
+# Get HTML5 Template
+function h5d {
+ clone h5 && npm install && gulp
 }
