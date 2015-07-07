@@ -7,13 +7,18 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # Shortcuts
-alias d="cd ~/Documents/Dropbox"
+alias d="cd ~/Developer"
+alias gd="cd ~/Google\ Drive"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias p="cd ~/projects"
 alias g="git"
 alias h="history"
 alias j="jobs"
+
+# OS
+alias reboot='sudo /sbin/reboot'        # Restart
+alias poweroff='sudo /sbin/poweroff'    # Power OFF 
+alias shutdown='sudo /sbin/shutdown'    # Shutdown
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -40,6 +45,9 @@ alias sudo='sudo '
 
 # Get week number
 alias week='date +%V'
+
+# Show today date
+alias today='date +"%d-%m-%Y (%A, %d %B %Y, %T)"'
 
 # Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
