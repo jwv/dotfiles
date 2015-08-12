@@ -17,7 +17,7 @@ alias j="jobs"
 
 # OS
 alias reboot='sudo /sbin/reboot'        # Restart
-alias poweroff='sudo /sbin/poweroff'    # Power OFF 
+alias poweroff='sudo /sbin/poweroff'    # Power OFF
 alias shutdown='sudo /sbin/shutdown'    # Shutdown
 
 # Detect which `ls` flavor is in use
@@ -53,7 +53,7 @@ alias today='date +"%d-%m-%Y (%A, %d %B %Y, %T)"'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
+alias update='sudo softwareupdate -i -a; sudo brew update; sudo brew upgrade --all; sudo brew cleanup; sudo npm install npm -g; sudo npm update -g; sudo gem update --system; sudo gem update'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"

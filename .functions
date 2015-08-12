@@ -337,5 +337,17 @@ function myps {
 
 # Get HTML5 Template
 function h5d {
- clone h5 && npm install && gulp
+	local path=$1;
+	local repo="h5";
+	local url="git@github.com:jwv/$repo";
+
+	if [[ -z $path ]]
+	then
+		path=$repo;
+	fi
+
+  url="git@github.com:jwv/$repo";
+
+  echo "Repo: " $url "Path:" $path
+  git clone $url $path && cd $path && npm install && tput bel && subl . && gulp;
 }
